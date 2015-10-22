@@ -1,0 +1,35 @@
+.inl-bl {
+  display: inline-block;
+}
+
+.bq {
+  margin: 0;
+}
+
+.header {
+  color: #ee6e73;
+  font-weight: 300;
+}
+
+.small-header {
+  font-size: 15px;
+  color: black;
+}
+
+.demo-padding {
+  padding-bottom: 15px !important;
+}
+
+.colorpicker-2x .colorpicker-saturation {
+  width: 200px;
+  height: 200px;
+}
+.colorpicker-2x .colorpicker-hue,
+.colorpicker-2x .colorpicker-alpha {
+  width: 30px;
+  height: 200px;
+}
+.colorpicker-2x .colorpicker-color,
+.colorpicker-2x .colorpicker-color div{
+  height: 30px;
+}

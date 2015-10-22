@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Colorpicker for MaterializeCSS</title>
+  <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="dist/css/materialize-colorpicker.min.css">
+  <link rel="stylesheet" href="bower_components/prism/themes/prism.css">
+  <link rel="stylesheet" href="src/css/docs.css">
+
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NavBar -->
+  <div class="navbar-fixed">
+    <nav>
+      <div class="container">
+        <a href="#" class="brand-logo"><i class="material-icons">camera</i> Materialize ColorPicker 1.0</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#about">About</a></li>
+          <li><a href="#examples">Examples</a></li>
+          <li><a href="#documentation">Documentation</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <!-- NavBar -->
+
+  <!-- Content -->
+  <div class="container">
+
+    <!-- Title -->
+    <section id="about">
+
+      <div class="row">
+        <div class="col s12 m9 l10">
+          <h3 class="header">Materialize Colorpicker 1.0 <span class="small-header">for MaterializeCSS</span></h3>
+        </div>
+      </div>
+
+    </section>
+    <!-- Title -->
+
+    <!-- About -->
+    <section>
+
+      <div class="row">
+        <p>
+          Colorpicker plugin for MaterializeCSS toolkit. Originally written by <a
+          href="https://twitter.com/stefanpetre/" target="_blank">@eyecon</a>, forked from
+          <a href="http://twitter.com/mjolnic/" target="_blank">@mjolnic</a> and maintened by <a href="https://github.com/felipegruoso" target="_blank">felipegruoso</a>.
+          <br>
+          <br> It basically adds a color picker to a field or any other element.
+        </p>
+        <blockquote class="bq">Can be used as a component;</blockquote>
+        <blockquote class="bq">Has alpha picker;</blockquote>
+        <blockquote class="bq">Supports multiple formats: HEX, RGB, RGBA, HSL, HSLA.</blockquote>
+      </div>
+
+      <div class="row">
+        <a href="https://github.com/mjolnic/bootstrap-colorpicker/" target="_blank"
+           class="btn btn-default btn-md"><i class="glyphicon glyphicon-random"></i> Fork Original Source</a>
+        <a href="https://github.com/felipegruoso/bootstrap-colorpicker/" target="_blank"
+           class="btn btn-default btn-md"><i class="glyphicon glyphicon-random"></i> Fork me on Github</a>
+        <a href="https://github.com/felipegruoso/bootstrap-colorpicker/archive/master.zip" target="_blank"
+           class="btn btn-success btn-md"><i class="glyphicon glyphicon-download-alt"></i> Download</a>
+
+      </div>
+
+    </section>
+    <!-- About -->
+
+    <!-- Examples -->
+    <section id="examples">
+
+      <div class="row">
+
+        <div class="col s12 m9 l10">
+          <h3 class="header">Examples</h3>
+        </div>
+
+        <div class="col s12">
+
+          <p>Attached to a field with hex format specified via options:</p>
+          <div class="row">
+
+            <!-- Demo 1 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo1-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo1-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo1-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo1-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s6">
+                    <input type="text" id="demo1" value="#5367ce" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo1-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;input type="text" id="demo1" value="#5367ce" /&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo1-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('.demo1').colorpicker();
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 1 -->
+
+          </div>
+
+          <p>As a component:</p>
+          <div class="row">
+
+            <!-- Demo component -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo-component-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo-component-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo-component-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo-component-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s12 demo-padding">
+                    <div id="demo-component" class="file-field">
+                      <div class="btn"></div>
+                      <div class="file-path-wrapper">
+                        <input type="text" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo-component-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;div id="demo-component" class="file-field"&gt;
+  &lt;div class="btn">&lt;/div&gt;
+  &lt;div class="file-path-wrapper"&gt;
+    &lt;input type="text" /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo-component-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo-component').colorpicker({
+      component: '.btn'
+    });
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo component -->
+
+          </div>
+
+
+          <p>Using events to work with the color:
+          <div class="row">
+
+            <!-- Demo 2 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo2-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo2-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo2-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo2-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s12 demo-padding">
+                    <a href="#" id="demo2">Changes this text background color</a>.<p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo2-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;input type="text" class="demo1" value="#5367ce" /&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo2-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo2').colorpicker({
+      // Alpha is not supported for some html elements.
+      format: 'rgb'
+      // Gets the actual background color
+      color: $('#demo2').css('background-color')
+    }).on('changeColor', function(ev) {
+      // Sets the new color while it is changing.
+      $(this).css('background-color',ev.color.toHex());
+    });
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 2 -->
+
+          </div>
+
+          <p>Transparent color support:</p>
+          <div class="row">
+
+            <!-- Demo 3 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo3-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo3-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo3-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo3-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s6">
+                    <input type="text" data-format="hex" class="demo-auto colorpicker-element" id="demo3" value="transparent">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo3-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;input type="text" id="demo3" /&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo3-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo3').colorpicker({
+      format: 'hex',
+      color: 'transparent'
+    });
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 3 -->
+
+          </div>
+
+          <p>Horizontal mode:</p>
+          <div class="row">
+
+            <!-- Demo 4 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo4-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo4-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo4-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo4-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s6">
+                    <input type="text" id="demo4" value="#8fff00">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo4-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;input type="text" id="demo4" value="#8fff00" /&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo4-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo4').colorpicker({
+      horizontal: true
+    });
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 3 -->
+
+          </div>
+
+          <p>Inline mode:</p>
+          <div class="row">
+
+            <!-- Demo 5 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo5-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo5-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo5-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo5-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s12 demo-padding">
+                    <div id="demo5-1" class="inl-bl" data-container="#demo5-1" data-color="rgba(238,110,115,1)" data-inline="true"></div>
+                    <div id="demo5-2" class="inl-bl" data-container="true" data-color="rgba(38,166,154,1)" data-inline="true"></div>
+                    <div id="demo5-3" class="inl-bl"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo5-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;!-- HTML parameters--&gt;
+&lt;div id="demo5-1" class="inl-bl" data-container="#demo5-1" data-color="rgba(238,110,115,1)" data-inline="true"&gt;&lt;/div&gt;
+&lt;div id="demo5-2" class="inl-bl" data-container="true" data-color="rgba(38,166,154,1)" data-inline="true"&gt;&lt;/div&gt;
+
+&lt;!-- Javascript parameters --&gt;
+&lt;div id="demo5-3" class="inl-bl"&gt;&lt;/div&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo5-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo5-1').colorpicker();
+    $('#demo5-2').colorpicker();
+    $('#demo5-3').colorpicker({
+      container: true,
+      color: "rgba(100, 181, 246)",
+      inline: true
+    });
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 5 -->
+
+          </div>
+
+          <p>Materialize colors:</p>
+          <div class="row">
+
+            <!-- Demo 6 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo6-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo6-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo6-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo6-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s6 demo-padding">
+                    <input type="text" id="demo6">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo6-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;input type="text" id="demo6" /&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo6-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo6').colorpicker({
+      colorSelectors: {
+        'red': '#f44336',
+        'pink': '#e91e63',
+        'purple': '#9c27b0',
+        'deep-purple': '#673ab7',
+        'indigo': '#3f51b5',
+        'blue': '#2196f3',
+        'light-blue': '#03a9f4',
+        'cyan': '#00bcd4',
+        'teal': '#009688',
+        'green': '#4caf50',
+        'light-green': '#8bc34a',
+        'lime': '#cddc39',
+        'yellow': '#ffeb3b',
+        'amber': '#ffc107',
+        'orange': '#ff9800',
+        'deep-orange': '#ff5722',
+        'brown': '#795548',
+        'grey': '#9e9e9e',
+        'blue-grey': '#607d8b',
+        'black': '#000000',
+        'white': '#ffffff'
+      },
+      format: 'hex',
+      color:  'green'
+    });
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 6 -->
+
+          </div>
+
+          <p>Custom size:</p>
+          <div class="row">
+
+            <!-- Demo 7 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo7-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo7-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo7-js">JavaScript</a></li>
+                <li class="tab col s3"><a href="#demo7-css">CSS</a></li>
+              </ul>
+            </div>
+            <div id="demo7-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s6 demo-padding">
+                    <input type="text" id="demo7" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo7-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;input type="text" id="demo7" /&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo7-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo7').colorpicker({
+      color: '#ffaa00',
+      customClass: 'colorpicker-2x',
+      sliders: {
+        saturation: {
+          maxLeft: 200,
+          maxTop: 200
+        },
+        hue: {
+          maxTop: 200
+        },
+        alpha: {
+          maxTop: 200
+        }
+      }
+    });
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo7-css" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;style&gt;
+  .colorpicker-2x .colorpicker-saturation {
+    width: 200px;
+    height: 200px;
+  }
+  .colorpicker-2x .colorpicker-hue,
+  .colorpicker-2x .colorpicker-alpha {
+    width: 30px;
+    height: 200px;
+  }
+  .colorpicker-2x .colorpicker-color,
+  .colorpicker-2x .colorpicker-color div{
+    height: 30px;
+  }
+&lt;/style&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 7 -->
+
+          </div>
+
+          <p>Enabled / Disabled:</p>
+          <div class="row">
+
+            <!-- Demo 8 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo8-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo8-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo8-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo8-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s6 demo-padding">
+                    <input type="text" id="demo8" />
+                  </div>
+                  <div class="col s6">
+                    <a id="demo-enable" class="waves-effect waves-light btn"><i class="material-icons left">done</i>enable</a>
+                    <a id="demo-disable" class="waves-effect waves-light btn red"><i class="material-icons left">clear</i>disable</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo8-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;input type="text" id="demo8" /&gt;
+
+&lt;a id="demo-enable" class="waves-effect waves-light btn"&gt;&lt;i class="material-icons left">done&lt;/i&gt;enable&lt;/a&gt;
+&lt;a id="demo-disable" class="waves-effect waves-light btn red"&gt;&lt;i class="material-icons left">clear&lt;/i&gt;disable&lt;/a&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo8-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo8').colorpicker();
+
+    // Handles the demo 8 disable button.
+    $("#demo-disable").click(function(e) {
+      e.preventDefault();
+      $("#demo8").colorpicker('disable');
+    });
+
+    // Handles the demo 8 enable button.
+    $("#demo-enable").click(function(e) {
+      e.preventDefault();
+      $("#demo8").colorpicker('enable');
+    });
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 8 -->
+
+          </div>
+
+          <p>Materialize modal:</p>
+          <div class="row">
+
+            <!-- Demo 9 -->
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3"><a class="active" href="#demo9-example">Demo</a></li>
+                <li class="tab col s3"><a href="#demo9-html">HTML</a></li>
+                <li class="tab col s3"><a href="#demo9-js">JavaScript</a></li>
+              </ul>
+            </div>
+            <div id="demo9-example" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <div class="col s12 demo-padding">
+
+                    <a href="#modal1" class="waves-effect waves-light btn modal-trigger">open modal</a>
+
+                    <!-- Modal -->
+                    <div id="modal1" class="modal">
+                      <div class="modal-content">
+                        <h4>Colospicker inside modal</h4>
+                        <input type="text" id="demo9-1">
+                      </div>
+                      <div class="modal-footer">
+                        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+                      </div>
+                    </div>
+                    <!-- Modal -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="demo9-html" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;a href="#modal1" class="waves-effect waves-light btn modal-trigger">open modal&lt;/a&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div id="modal1" class="modal"&gt;
+  &lt;div class="modal-content"&gt;
+    &lt;h4>Colospicker inside modal&lt;/h4&gt;
+    &lt;input type="text" id="demo9-1"&gt;
+  &lt;/div&gt;
+  &lt;div class="modal-footer"&gt;
+    &lt;a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div id="demo9-js" class="col s12">
+              <div class="card">
+                <div class="card-content">
+                  <pre>
+                    <code class="language-markup">
+&lt;script&gt;
+  $(function() {
+    $('#demo9-1').colorpicker();
+  });
+&lt;/script&gt;
+                    </code>
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <!-- Demo 9 -->
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- Examples -->
+
+    <!-- Documentation -->
+    <section id="documentation">
+
+      <div class="col s12 m9 l10">
+        <h3 class="header">Documentation</h3>
+      </div>
+
+      <div class="col s12">
+
+        <div class="row">
+          <p>Call the colopicker via javascript:</p>
+          <div class="card">
+
+            <div class="card-content">
+              <pre>
+                <code class="language-markup">
+
+&lt;script&gt;
+  $(function(){
+    $('.sample-selector').colorpicker({ /*options...*/ });
+  });
+&lt;/script&gt;
+                </code>
+              </pre>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row">
+
+          <h5 class="header">Options</h5>
+          <p>You can set colorpicker options either as a plugin parameter or data-* attributes</p>
+
+          <table class="striped">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th style="width: 200px;">Type</th>
+              <th style="width: 200px;">Default</th>
+              <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>format</td>
+              <td>string</td>
+              <td>false</td>
+              <td>If not false, forces the color format to be hex, rgb or rgba, otherwise the format is
+                automatically detected.
+              </td>
+            </tr>
+            <tr>
+              <td>color</td>
+              <td>string</td>
+              <td>false</td>
+              <td>If not false, sets the color to this value.</td>
+            </tr>
+            <tr>
+              <td>container</td>
+              <td>string or jQuery Element</td>
+              <td>false</td>
+              <td>If not false, the picker will be contained inside this element, otherwise it will be
+                appended to the document body.
+              </td>
+            </tr>
+            <tr>
+              <td>component</td>
+              <td>string or jQuery Element</td>
+              <td>'.add-on, .input-group-addon'</td>
+              <td>Children selector for the component or element that trigger the colorpicker and which
+                background color will change (needs an inner &lt;i&gt; element).
+              </td>
+            </tr>
+            <tr>
+              <td>input</td>
+              <td>string or jQuery Element</td>
+              <td>'input'</td>
+              <td>Children selector for the input that will store the picker selected value.</td>
+            </tr>
+            <tr>
+              <td>horizontal</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td>If true, the hue and alpha channel bars will be rendered horizontally, above the saturation
+                selector.
+              </td>
+            </tr>
+            <tr>
+              <td>inline</td>
+              <td>boolean</td>
+              <td>false</td>
+              <td>If true, forces to show the colorpicker as an inline element.</td>
+            </tr>
+            <tr>
+              <td>sliders</td>
+              <td>object</td>
+              <td><abbr title="please, read the source code to see this value">[...]</abbr></td>
+              <td>Vertical sliders configuration (read source code if you really need to tweak this).</td>
+            </tr>
+            <tr>
+              <td>slidersHorz</td>
+              <td>object</td>
+              <td><abbr title="please, read the source code to see this value">[...]</abbr></td>
+              <td>Horizontal sliders configuration (read source code if you really need to tweak this).</td>
+            </tr>
+            <tr>
+              <td>template</td>
+              <td>string</td>
+              <td><abbr title="please, read the source code to see this value">[...]</abbr></td>
+              <td>Customizes the default colorpicker HTML template.</td>
+            </tr>
+            <tr>
+              <td>align</td>
+              <td>string</td>
+              <td>'right'</td>
+              <td>By default, the colorpicker is aligned to the right of the input. If you need to switch it
+                to the left, set align to 'left'.
+              </td>
+            </tr>
+            <tr>
+              <td>customClass</td>
+              <td>string</td>
+              <td>null</td>
+              <td>Adds this class to the colorpicker widget.</td>
+            </tr>
+            <tr>
+              <td>colorSelectors</td>
+              <td>object</td>
+              <td>null</td>
+              <td>List of pre selected colors (hex format). If you choose one of these colors, the alias is returned instead of the hex code.</td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="row">
+
+          <h5 class="header">jQuery API Methods</h5>
+          <p>General usage methods</p>
+
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>.colorpicker(options)</b></td>
+                <td><p>Initializes an colorpicker.</p></td>
+              </tr>
+                <td><b>.colorpicker('getValue', defaultValue)</b></td>
+                <td><p>Gets the value from the input or the data attribute (if has no input), otherwise returns the default value, which defaults to #000000 if not specified.</p></td>
+              </tr>
+              <tr>
+                <td><b>.colorpicker('setValue', value)</b></td>
+                <td><p>Set a new value for the color picker (also updates everything). Triggers 'changeColor' event.</p></td>
+              </tr>
+              <tr>
+                <td><b>.colorpicker('show')</b></td>
+                <td><p>Show the color picker.</p></td>
+              </tr>
+              <tr>
+                <td><b>.colorpicker('hide')</b></td>
+                <td><p>Hide the color picker.</p></td>
+              </tr>
+              <tr>
+                <td><b>.colorpicker('reposition')</b></td>
+                <td><p>Updates the color picker's position relative to the element.</p></td>
+              </tr>
+              <tr>
+                <td><b>.colorpicker('update')</b></td>
+                <td><p>Refreshes the widget colors (this is done automatically).</p></td>
+              </tr>
+              <tr>
+                <td><b>.colorpicker('enable')</b></td>
+                <td><p>Enable the color picker.</p></td>
+              </tr>
+              <tr>
+                <td><b>.colorpicker('disable')</b></td>
+                <td><p>Disable the color picker.</p></td>
+              </tr>
+              <tr>
+                <td><b>.colorpicker('destroy')</b></td>
+                <td><p>Destroys the colorpicker widget and unbind all .colorpicker events from the element and component.</p></td>
+              </tr>
+              <tr>
+                <td><b>.data('colorpicker')</b></td>
+                <td><p>Access to the colorpicker API directly.</p></td>
+              </tr>
+              <tr>
+                <td><b>.data('colorpicker').color</b></td>
+                <td><p>Access to the colorpicker Color object information.</p></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="row">
+
+          <h5 class="header">Color object methods</h5>
+          <p>Each triggered events have a color object (avaliable through event.color, see the example at the bottom) used internally by the picker. This object has several useful methods. These are the more commonly used:</p>
+
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>.setColor(value)</b></td>
+                <td><p>Set a new color. The value is parsed and tries to do a quess on the format.</p></td>
+              </tr>
+              <tr>
+                <td><b>.setHue(value)</b></td>
+                <td><p>Set the HUE with a value between 0 and 1.</p></td>
+              </tr>
+              <tr>
+                <td><b>.setSaturation(value)</b></td>
+                <td><p>Set the saturation with a value between 0 and 1.</p></td>
+              </tr>
+              <tr>
+                <td><b>.setBrightness(value)</b></td>
+                <td><p>Set the brightness with a value between 0 and 1.</p></td>
+              </tr>
+              <tr>
+                <td><b>.setAlpha(value)</b></td>
+                <td><p>Set the transparency with a value between 0 and 1.</p></td>
+              </tr>
+              <tr>
+                <td><b>.toRGB()</b></td>
+                <td><p>Returns a hash with red, green, blue and alpha.</p></td>
+              </tr>
+              <tr>
+                <td><b>.toHex()</b></td>
+                <td><p>Returns a string with HEX format for the current color.</p></td>
+              </tr>
+              <tr>
+                <td><b>.toHSL()</b></td>
+                <td><p>Returns a hash with HSLA values.</p></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="row">
+
+          <h5 class="header">Events</h5>
+
+          <table class="striped">
+            <thead>
+            <tr>
+              <th style="width: 150px;">Event</th>
+              <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>create</td>
+              <td>This event fires immediately when the color picker is created.</td>
+            </tr>
+            <tr>
+              <td>showPicker</td>
+              <td>This event fires immediately when the color picker is displayed.</td>
+            </tr>
+            <tr>
+              <td>hidePicker</td>
+              <td>This event is fired immediately when the color picker is hidden.</td>
+            </tr>
+            <tr>
+              <td>changeColor</td>
+              <td>This event is fired when the color is changed.</td>
+            </tr>
+            <tr>
+              <td>disable</td>
+              <td>This event is fired immediately when the color picker is disabled, except if it was
+                initialized as disabled.
+              </td>
+            </tr>
+            <tr>
+              <td>enable</td>
+              <td>This event is fired immediately when the color picker is enabled, except upon
+                initialization.
+              </td>
+            </tr>
+            <tr>
+              <td>destroy</td>
+              <td>This event fires immediately when the color picker is destroyed.</td>
+            </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="row">
+          <div class="card">
+            <div class="card-content">
+              <pre>
+                <code class="language-markup">
+
+&lt;script&gt;
+  $(function(){
+    $('.my-colorpicker').colorpicker().on('changeColor.colorpicker', function(event){
+      bodyStyle.backgroundColor = event.color.toHex();
+    });
+  });
+&lt;/script&gt;
+                </code>
+              </pre>
+              <pre class="markup">
+              </pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- Documentation -->
+
+  </div>
+  <!-- Content -->
+</div>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+<script src="bower_components/prism/prism.js"></script>
+<script src="dist/js/materialize-colorpicker.min.js"></script>
+<script src="src/js/docs.js"></script>
+</body>
+
+</html>
